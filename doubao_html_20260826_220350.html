@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大风大浪集团</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #0b162b;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #142547;
+            padding:14px 20px;
+            position: sticky;
+            top:0;
+            z-index:99;
+        }
+        .nav-wrap {
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+        .logo-text {
+            font-size:22px;
+            font-weight:bold;
+            color:#42a5f5;
+        }
+        .nav-left a {
+            color:#fff;
+            text-decoration:none;
+            margin:0 10px;
+            font-size:15px;
+        }
+        .nav-left a:hover {
+            color:#42a5f5;
+        }
+        .nav-right a {
+            color:#fff;
+            text-decoration:none;
+            padding:6px 14px;
+            border:1px solid #42a5f5;
+            border-radius:6px;
+            margin-left:8px;
+            font-size:14px;
+        }
+        .nav-right a:hover {
+            background-color:#42a5f5;
+            color:#0b162b;
+        }
+        .container {
+            max-width:1100px;
+            margin:0 auto;
+            padding:30px 20px;
+        }
+        section {
+            margin-bottom:45px;
+        }
+        h2 {
+            color:#42a5f5;
+            margin-bottom:16px;
+            border-left:4px solid #42a5f5;
+            padding-left:12px;
+        }
+        .card {
+            background:#172b50;
+            padding:20px;
+            border-radius:12px;
+            margin-bottom:15px;
+        }
+        footer {
+            text-align:center;
+            padding:25px;
+            color:#b0c4de;
+            font-size:14px;
+        }
+        @media(max-width:600px){
+            .nav-wrap{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-wrap">
+        <div class="logo-text">大风大浪集团</div>
+        <div class="nav-left">
+            <a href="#home">首页</a>
+            <a href="#ceo">CEO介绍</a>
+            <a href="#business">业务板块</a>
+            <a href="#contact">联系我们</a>
+            <!--小说查看直接新开标签页跳转你的小说网址-->
+            <a href="https://rqxcu0.gicp.fun" target="_blank">小说查看</a>
+            <a href="https://jxkyuh.gicp.fun" target="_blank">跳转游戏</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <section id="home">
+        <h2>集团简介</h2>
+        <div class="card">
+            <p>大风大浪集团是一家多元化综合企业集团，业务覆盖科技研发、智能设备、文体装备等多个领域。集团坚持创新为本，注重产品实际体验，面向广大普通用户打造实用、高性价比的各类产品。集团内部人才梯队完善，拥有多名核心管理人员与技术研发人员，不断拓展新赛道，持续提升自身实力。</p>
+        </div>
+    </section>
+    <section id="ceo">
+        <h2>CEO介绍</h2>
+        <div class="card">
+            <p>汤学臻，大风大浪集团董事长兼CEO。主导集团整体战略规划，统筹各个业务板块的发展方向，推动新项目立项落地。注重技术创新与人才培养，带领团队在智能硬件、文体设备领域持续探索，制定集团发展路线，把控产品质量与发展节奏。</p>
+            <p>集团核心管理人员廉晋善、雷国蔚参与重大项目决策，协同推进各项业务稳步向前。</p>
+        </div>
+    </section>
+    <section id="business">
+        <h2>业务板块</h2>
+        <div class="card">
+            <h3>战神飞拍 — 乒乓球辅助系统</h3>
+            <p>战神飞拍乒乓球辅助系统，面向乒乓球爱好者，辅助练习击球动作，帮助使用者纠正打球姿势，提升日常训练效果，是集团文体装备板块的重点产品。</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>联系我们</h2>
+        <div class="card">
+            <p>联系电话：150xxxx4684</p>
+            <p>邮箱：363***982@qq.com</p>
+        </div>
+    </section>
+</div>
+<footer>大风大浪集团 © 2026 版权所有</footer>
+</body>
+</html>
