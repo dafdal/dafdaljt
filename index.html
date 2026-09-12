@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#04060d">
 <title>大风大浪集团 - 官方网站</title>
-<link rel="icon" type="image/png" href="https://dafdal.github.io/logo.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='10' fill='%2304060d' stroke='%2321e6ff' stroke-width='2.5'/%3E%3Cpath d='M10 30c5-8 9-8 14 0s9 8 14 0' fill='none' stroke='%2321e6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M10 20c5-8 9-8 14 0s9 8 14 0' fill='none' stroke='%238a5cff' stroke-width='2.6' stroke-linecap='round' opacity='.6'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Orbitron:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
 <style>
 :root{
@@ -42,7 +42,7 @@ header.scrolled{background:rgba(5,8,18,.78);backdrop-filter:blur(16px);-webkit-b
 .logo{display:flex;align-items:center;gap:13px;text-decoration:none}
 .logo .mark{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 10px rgba(33,230,255,.35))}
 .logo .lt{display:flex;flex-direction:column;line-height:1.15}
-.logo .lt b{font-size:20px;font-weight:900;letter-spacing:3px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .lt b{font-size:20px;font-weight:900;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .logo .lt small{font-family:var(--font-d);font-size:8.5px;letter-spacing:3.6px;color:var(--dim);text-transform:uppercase;margin-top:3px}
 nav{display:flex;align-items:center;gap:2px}
 nav a{position:relative;color:var(--mut);text-decoration:none;font-size:13.5px;padding:8px 10px;transition:color .3s;letter-spacing:1px;white-space:nowrap}
@@ -54,6 +54,15 @@ nav .sep{width:1px;height:18px;background:rgba(116,154,255,.25);margin:0 6px}
 .auth{display:flex;align-items:center;gap:8px}
 .auth a{font-size:13px;color:#bfeaff;text-decoration:none;padding:7px 16px;border:1px solid rgba(33,230,255,.4);clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);transition:.3s;background:rgba(33,230,255,.05)}
 .auth a:hover{background:var(--cy);color:#04121f;box-shadow:0 0 20px rgba(33,230,255,.4)}
+/* ===== 语言切换 ===== */
+.lang-switch{position:relative;display:flex;align-items:center;height:36px;border:1px solid rgba(116,154,255,.38);border-radius:999px;overflow:hidden;cursor:pointer;user-select:none;background:rgba(33,230,255,.04);flex:none}
+.lang-switch .pill{position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:999px;background:var(--grad);z-index:1;transition:transform .32s ease;box-shadow:0 0 14px rgba(33,230,255,.4)}
+.lang-switch .lg{position:relative;z-index:2;padding:0 14px;font-size:11.5px;letter-spacing:2px;font-weight:700;font-family:var(--font-d);color:var(--mut);transition:color .3s;line-height:36px}
+body.lang-zh .lang-switch .pill{transform:translateX(100%)}
+body.lang-zh .lang-switch .lg-en{color:var(--mut)}
+body.lang-zh .lang-switch .lg-zh{color:#04121f}
+body.lang-en .lang-switch .lg-en{color:#04121f}
+body.lang-en .lang-switch .lg-zh{color:var(--mut)}
 .info-wrap{position:relative}
 .info-icon{width:40px;height:40px;border:1px solid rgba(116,154,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cy);font-family:var(--font-d);font-size:14px;font-weight:700;cursor:pointer;user-select:none;transition:.28s;background:rgba(33,230,255,.05)}
 .info-icon:hover{background:var(--cy);color:#04121f;box-shadow:0 0 22px rgba(33,230,255,.5)}
@@ -92,13 +101,15 @@ body.lock{overflow:hidden}
 .a2{width:42vw;height:42vw;right:-10vw;top:8vw;background:radial-gradient(circle,rgba(138,92,255,.24),transparent 65%);animation:drift 24s ease-in-out infinite alternate-reverse}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(5vw,4vw) scale(1.18)}}
 .hero-inner{position:relative;z-index:3;text-align:center;max-width:1120px;width:100%;padding:58px 40px 66px;border:1px solid rgba(116,154,255,.16);background:linear-gradient(180deg,rgba(7,11,24,.36),rgba(7,11,24,.12));backdrop-filter:blur(4px)}
-.hero-kick{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-d);font-size:13px;letter-spacing:5px;color:var(--cy);text-transform:uppercase;animation:up .9s .1s both}
+.hero-kick{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-d);font-size:13px;letter-spacing:4px;color:var(--cy);text-transform:uppercase;animation:up .9s .1s both}
 .hero-kick::before,.hero-kick::after{content:"";width:48px;height:1px}
 .hero-kick::before{background:linear-gradient(90deg,transparent,var(--cy))}
 .hero-kick::after{background:linear-gradient(90deg,var(--cy),transparent)}
-.hero h1{font-weight:900;font-size:clamp(44px,8vw,94px);line-height:1.1;letter-spacing:8px;margin:20px 0 10px;background:linear-gradient(115deg,#ffffff 0%,#a8e2ff 26%,#21e6ff 52%,#8f8bff 78%,#ffffff 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s linear infinite,up .9s .22s both;filter:drop-shadow(0 8px 40px rgba(33,230,255,.26))}
+.hero h1{font-weight:900;font-size:clamp(28px,7vw,72px);line-height:1.12;letter-spacing:4px;margin:20px 0 10px;background:linear-gradient(115deg,#ffffff 0%,#a8e2ff 26%,#21e6ff 52%,#8f8bff 78%,#ffffff 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s linear infinite,up .9s .22s both;filter:drop-shadow(0 8px 40px rgba(33,230,255,.26))}
+body.lang-zh .hero h1{font-size:clamp(44px,8vw,94px);letter-spacing:8px}
 @keyframes shine{0%{background-position:0% 0}100%{background-position:230% 0}}
-.hero .slogan{font-size:clamp(15px,2.3vw,20px);color:var(--mut);letter-spacing:7px;font-weight:300;margin-bottom:34px;animation:up .9s .38s both}
+.hero .slogan{font-size:clamp(15px,2.3vw,20px);color:var(--mut);letter-spacing:4px;font-weight:300;margin-bottom:34px;animation:up .9s .38s both}
+body.lang-zh .hero .slogan{letter-spacing:7px}
 .chips{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:up .9s .52s both}
 .chip{position:relative;padding:10px 22px;border:1px solid rgba(33,230,255,.38);color:#bfeaff;font-size:14px;letter-spacing:3px;background:rgba(33,230,255,.06);clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);transition:.3s;cursor:default}
 .chip:hover{background:rgba(33,230,255,.15);box-shadow:0 0 26px rgba(33,230,255,.28);transform:translateY(-3px)}
@@ -224,7 +235,7 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 .foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
 .foot-brand{display:flex;align-items:center;gap:13px}
 .foot-brand .mark{width:38px;height:38px;filter:drop-shadow(0 0 8px rgba(33,230,255,.3))}
-.foot-brand b{font-size:18px;font-weight:900;letter-spacing:3px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot-brand b{font-size:18px;font-weight:900;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .foot-brand small{display:block;font-family:var(--font-d);font-size:8px;letter-spacing:3px;color:var(--dim);margin-top:3px;text-transform:uppercase}
 .foot-links{display:flex;gap:8px;flex-wrap:wrap}
 .foot-links a{color:var(--mut);text-decoration:none;font-size:14px;padding:12px 14px;letter-spacing:1px;transition:.3s;position:relative}
@@ -281,6 +292,10 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
   .marquee{transform:rotate(-2deg) scale(1.04)}
   .ceo-avatar{width:200px;height:200px}
   .about-panel .tag{left:12px;bottom:12px;font-size:10px}
+  .hero h1{font-size:clamp(22px,7.2vw,40px);letter-spacing:1px}
+  body.lang-zh .hero h1{font-size:clamp(40px,9vw,50px);letter-spacing:5px}
+  .hero .slogan{letter-spacing:2px}
+  body.lang-zh .hero .slogan{letter-spacing:4px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -290,14 +305,14 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 }
 </style>
 </head>
-<body>
+<body class="lang-zh">
 <div class="bg-glow" aria-hidden="true"></div>
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 <div id="sp" aria-hidden="true"></div>
 <!-- ===== 顶部导航 ===== -->
 <header id="head">
-  <a class="logo" href="#home" aria-label="大风大浪集团 首页">
+  <a class="logo" href="#home" aria-label="Dafeng Dalang Group">
     <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
       <defs><linearGradient id="lg-mark" x1="0" y1="0" x2="48" y2="48"><stop offset="0" stop-color="#21e6ff"/><stop offset="1" stop-color="#8a5cff"/></linearGradient></defs>
       <rect x="2" y="2" width="44" height="44" rx="10" stroke="url(#lg-mark)" stroke-width="2" fill="rgba(33,230,255,.06)"/>
@@ -305,48 +320,53 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
       <path d="M10 20c5-8 9-8 14 0s9 8 14 0" stroke="url(#lg-mark)" stroke-width="2.6" stroke-linecap="round" opacity=".5"/>
       <circle cx="38" cy="10" r="2.2" fill="#21e6ff"/>
     </svg>
-    <span class="lt"><b>大风大浪集团</b><small>DAFENG DALANG GROUP</small></span>
+    <span class="lt"><b data-i18n="logo.brand">大风大浪集团</b><small>DAFENG DALANG GROUP</small></span>
   </a>
-  <nav aria-label="主导航">
-    <a href="#home">首页</a>
-    <a href="#ceo">CEO介绍</a>
-    <a href="#business">业务板块</a>
-    <a href="#racing">赛车游戏</a>
-    <a href="#contact">联系我们</a>
+  <nav aria-label="Main navigation">
+    <a href="#home" data-i18n="nav.home">首页</a>
+    <a href="#ceo" data-i18n="nav.ceo">CEO介绍</a>
+    <a href="#business" data-i18n="nav.business">业务板块</a>
+    <a href="#racing" data-i18n="nav.racing">赛车游戏</a>
+    <a href="#contact" data-i18n="nav.contact">联系我们</a>
     <span class="sep" aria-hidden="true"></span>
-    <a href="https://rqxcu0.gicp.fun/" target="_blank" rel="noopener">小说查看</a>
-    <a href="https://bo1w3q.gicp.fun/" target="_blank" rel="noopener">跳转游戏</a>
-    <a href="https://zu1iy1.gicp.fun/" target="_blank" rel="noopener">解压果冻</a>
-    <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener">乐子AI</a>
-    <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener">意见反馈</a>
+    <a href="https://maipdf.cn/file/at6aa4b328e1cb3/pdf" target="_blank" rel="noopener" data-i18n="nav.novel">小说查看</a>
+    <a href="https://bo1w3q.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.games">跳转游戏</a>
+    <a href="https://zu1iy1.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.jelly">解压果冻</a>
+    <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener" data-i18n="nav.lezi">乐子AI</a>
+    <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.feedback">意见反馈</a>
   </nav>
   <div class="header-right">
     <div class="auth">
-      <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener">登录</a>
-      <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener">注册</a>
+      <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.login">登录</a>
+      <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.register">注册</a>
+    </div>
+    <div class="lang-switch" id="langSwitch" role="button" tabindex="0" aria-label="Switch language">
+      <span class="pill" aria-hidden="true"></span>
+      <span class="lg lg-en">EN</span>
+      <span class="lg lg-zh">中文</span>
     </div>
     <div class="info-wrap fr">
-      <div class="info-icon" id="infoIcon" role="button" aria-label="免责声明" tabindex="0">i</div>
+      <div class="info-icon" id="infoIcon" role="button" aria-label="Disclaimer" tabindex="0">i</div>
       <div class="info-popup" id="infoPop">
-        <h4>免责声明</h4>
-        <p>本网站为完全虚构演示网站，大风大浪集团、相关人物、企业信息、联系方式均为虚构创作，不对应任何现实实体。网站所有内容仅供网页技术演示学习使用，不构成任何商业参考。若有雷同纯属巧合。</p>
+        <h4 data-i18n="disc.title">免责声明</h4>
+        <p data-i18n="disc.text">本网站为完全虚构演示网站，大风大浪集团、相关人物、企业信息、联系方式均为虚构创作，不对应任何现实实体。网站所有内容仅供网页技术演示学习使用，不构成任何商业参考。若有雷同纯属巧合。</p>
       </div>
     </div>
-    <button id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+    <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <div class="mnav" id="mnav">
-  <a href="#home">首页</a>
-  <a href="#ceo">CEO介绍</a>
-  <a href="#business">业务板块</a>
-  <a href="#racing">赛车游戏</a>
-  <a href="#contact">联系我们</a>
-  <a href="https://rqxcu0.gicp.fun/" target="_blank" rel="noopener">小说查看</a>
-  <a href="https://bo1w3q.gicp.fun/" target="_blank" rel="noopener">跳转游戏</a>
-  <a href="https://zu1iy1.gicp.fun/" target="_blank" rel="noopener">解压果冻</a>
-  <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener">乐子AI</a>
-  <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener">意见反馈</a>
-  <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener">登录 / 注册</a>
+  <a href="#home" data-i18n="nav.home">首页</a>
+  <a href="#ceo" data-i18n="nav.ceo">CEO介绍</a>
+  <a href="#business" data-i18n="nav.business">业务板块</a>
+  <a href="#racing" data-i18n="nav.racing">赛车游戏</a>
+  <a href="#contact" data-i18n="nav.contact">联系我们</a>
+  <a href="https://maipdf.cn/file/at6aa4b328e1cb3/pdf" target="_blank" rel="noopener" data-i18n="nav.novel">小说查看</a>
+  <a href="https://bo1w3q.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.games">跳转游戏</a>
+  <a href="https://zu1iy1.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.jelly">解压果冻</a>
+  <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener" data-i18n="nav.lezi">乐子AI</a>
+  <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.feedback">意见反馈</a>
+  <a href="https://ed8vlf.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.loginReg">登录 / 注册</a>
 </div>
 <main>
 <!-- ===== Hero ===== -->
@@ -358,13 +378,13 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
   <div class="aurora a2" aria-hidden="true"></div>
   <div class="hero-inner fr">
     <i class="cr1"></i><i class="cr2"></i>
-    <p class="hero-kick">EST. 2026 · 综合企业集团</p>
-    <h1>大风大浪集团</h1>
-    <p class="slogan">多元产业，创新驱动前行</p>
+    <p class="hero-kick" data-i18n="hero.kick">EST. 2026 · 综合企业集团</p>
+    <h1 data-i18n="hero.title">大风大浪集团</h1>
+    <p class="slogan" data-i18n="hero.slogan">多元产业，创新驱动前行</p>
     <div class="chips">
-      <span class="chip">科技研发</span>
-      <span class="chip">智能设备</span>
-      <span class="chip">文体装备</span>
+      <span class="chip" data-i18n="chip.rd">科技研发</span>
+      <span class="chip" data-i18n="chip.sd">智能设备</span>
+      <span class="chip" data-i18n="chip.se">文体装备</span>
     </div>
   </div>
   <div class="scrolldown" aria-hidden="true"><span></span><b>SCROLL</b></div>
@@ -379,10 +399,10 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <div class="marquee" aria-hidden="true">
   <div class="mtrack">
     <div class="it">
-      <em>多元产业</em><span class="dmd"></span><span>创新为本</span><span class="dmd"></span><em>智能设备</em><span class="dmd"></span><span>文体装备</span><span class="dmd"></span><em>战神飞拍</em><span class="dmd"></span><span>乒乓球辅助系统</span><span class="dmd"></span><em>赛车游戏</em><span class="dmd"></span><span>高性价比</span><span class="dmd"></span>
+      <em data-i18n="m.1">多元产业</em><span class="dmd"></span><span data-i18n="m.2">创新为本</span><span class="dmd"></span><em data-i18n="m.3">智能设备</em><span class="dmd"></span><span data-i18n="m.4">文体装备</span><span class="dmd"></span><em data-i18n="m.5">战神飞拍</em><span class="dmd"></span><span data-i18n="m.6">乒乓球辅助系统</span><span class="dmd"></span><em data-i18n="m.7">赛车游戏</em><span class="dmd"></span><span data-i18n="m.8">高性价比</span><span class="dmd"></span>
     </div>
     <div class="it">
-      <em>多元产业</em><span class="dmd"></span><span>创新为本</span><span class="dmd"></span><em>智能设备</em><span class="dmd"></span><span>文体装备</span><span class="dmd"></span><em>战神飞拍</em><span class="dmd"></span><span>乒乓球辅助系统</span><span class="dmd"></span><em>赛车游戏</em><span class="dmd"></span><span>高性价比</span><span class="dmd"></span>
+      <em data-i18n="m.1">多元产业</em><span class="dmd"></span><span data-i18n="m.2">创新为本</span><span class="dmd"></span><em data-i18n="m.3">智能设备</em><span class="dmd"></span><span data-i18n="m.4">文体装备</span><span class="dmd"></span><em data-i18n="m.5">战神飞拍</em><span class="dmd"></span><span data-i18n="m.6">乒乓球辅助系统</span><span class="dmd"></span><em data-i18n="m.7">赛车游戏</em><span class="dmd"></span><span data-i18n="m.8">高性价比</span><span class="dmd"></span>
     </div>
   </div>
 </div>
@@ -390,22 +410,22 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <section class="sec" id="about">
   <div class="sec-inner">
     <div class="sec-head rv">
-      <div><p class="kicker">01 · ABOUT</p><h2 class="st">集团简介</h2></div>
+      <div><p class="kicker">01 · ABOUT</p><h2 class="st" data-i18n="about.title">集团简介</h2></div>
       <span class="sec-no" aria-hidden="true">01</span>
     </div>
     <div class="about-grid">
       <div class="about-text rv">
-        <p>大风大浪集团是一家<strong>多元化综合企业集团</strong>，业务覆盖<strong>科技研发、智能设备、文体装备</strong>等多个领域。集团坚持创新为本，注重产品实际体验，面向广大普通用户打造实用、高性价比的各类产品。集团内部人才梯队完善，拥有多名核心管理人员与技术研发人员，不断拓展新赛道，持续提升自身实力。</p>
+        <p data-i18n="about.p1">大风大浪集团是一家<strong>多元化综合企业集团</strong>，业务覆盖<strong>科技研发、智能设备、文体装备</strong>等多个领域。集团坚持创新为本，注重产品实际体验，面向广大普通用户打造实用、高性价比的各类产品。集团内部人才梯队完善，拥有多名核心管理人员与技术研发人员，不断拓展新赛道，持续提升自身实力。</p>
         <ul class="about-points">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>多元布局：科技研发 + 智能设备 + 文体装备</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>面向广大普通用户，注重实际体验</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>人才梯队完善，持续拓展新赛道</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="about.li1">多元布局：科技研发 + 智能设备 + 文体装备</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="about.li2">面向广大普通用户，注重实际体验</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="about.li3">人才梯队完善，持续拓展新赛道</span></li>
         </ul>
       </div>
       <div class="about-panel rv" data-d="1">
         <div class="pic fr">
           <i class="cr1"></i><i class="cr2"></i>
-          <img src="hero.jpg" alt="风浪之海">
+          <img src="hero.jpg" alt="Ocean of Waves" data-i18n-alt="alt.hero">
           <span class="tag">DRIVEN BY THE WAVES</span>
         </div>
       </div>
@@ -414,20 +434,20 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
       <div class="fcard fr rv">
         <i class="cr1"></i><i class="cr2"></i>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.7L18.6 9.6l-4.7 1.9L12 16.2l-1.9-4.7L5.4 9.6l4.7-1.9z"/><path d="M18.8 14.6l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9z"/></svg>
-        <h4>创新为本</h4>
-        <p>坚持创新驱动，在科技研发与智能设备赛道持续深耕突破。</p>
+        <h4 data-i18n="feat1.t">创新为本</h4>
+        <p data-i18n="feat1.d">坚持创新驱动，在科技研发与智能设备赛道持续深耕突破。</p>
       </div>
       <div class="fcard fr rv" data-d="1">
         <i class="cr1"></i><i class="cr2"></i>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 9-9 9-9-9z"/><circle cx="12" cy="12" r="3.2"/></svg>
-        <h4>注重体验</h4>
-        <p>以实际产品体验为先，让每一项技术都落到用户的真实感受上。</p>
+        <h4 data-i18n="feat2.t">注重体验</h4>
+        <p data-i18n="feat2.d">以实际产品体验为先，让每一项技术都落到用户的真实感受上。</p>
       </div>
       <div class="fcard fr rv" data-d="2">
         <i class="cr1"></i><i class="cr2"></i>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c4.5-7 9-7 13.5 0s4 1.8 4-.4"/><path d="M16 4h5v5"/><path d="M21 4l-8.5 8.5"/></svg>
-        <h4>高性价比</h4>
-        <p>面向大众市场，打造实用、高性价比的各类优质产品。</p>
+        <h4 data-i18n="feat3.t">高性价比</h4>
+        <p data-i18n="feat3.d">面向大众市场，打造实用、高性价比的各类优质产品。</p>
       </div>
     </div>
   </div>
@@ -436,7 +456,7 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <section class="sec" id="ceo">
   <div class="sec-inner">
     <div class="sec-head rv">
-      <div><p class="kicker">02 · CEO</p><h2 class="st">CEO介绍</h2></div>
+      <div><p class="kicker">02 · CEO</p><h2 class="st" data-i18n="ceo.title">CEO介绍</h2></div>
       <span class="sec-no" aria-hidden="true">02</span>
     </div>
     <div class="ceo-card fr rv">
@@ -456,10 +476,10 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
       <div class="ceo-info">
         <p class="kicker">CHAIRMAN &amp; CEO</p>
         <h3>汤学臻</h3>
-        <p class="role">大风大浪集团董事长兼CEO</p>
-        <p class="bio">主导集团整体战略规划，统筹各个业务板块的发展方向，推动新项目立项落地。注重技术创新与人才培养，带领团队在智能硬件、文体设备领域持续探索，制定集团发展路线，把控产品质量与发展节奏。</p>
-        <p class="bio">集团核心管理人员<strong>廉晋善、雷国蔚</strong>参与重大项目决策，协同推进各项业务稳步向前。</p>
-        <div class="ceo-tags"><span>战略规划</span><span>技术创新</span><span>人才培养</span></div>
+        <p class="role" data-i18n="ceo.role">大风大浪集团董事长兼CEO</p>
+        <p class="bio" data-i18n="ceo.bio1">主导集团整体战略规划，统筹各个业务板块的发展方向，推动新项目立项落地。注重技术创新与人才培养，带领团队在智能硬件、文体设备领域持续探索，制定集团发展路线，把控产品质量与发展节奏。</p>
+        <p class="bio" data-i18n="ceo.bio2">集团核心管理人员<strong>廉晋善、雷国蔚</strong>参与重大项目决策，协同推进各项业务稳步向前。</p>
+        <div class="ceo-tags"><span data-i18n="ceo.tag1">战略规划</span><span data-i18n="ceo.tag2">技术创新</span><span data-i18n="ceo.tag3">人才培养</span></div>
       </div>
     </div>
   </div>
@@ -468,7 +488,7 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <section class="sec" id="business">
   <div class="sec-inner">
     <div class="sec-head rv">
-      <div><p class="kicker">03 · BUSINESS</p><h2 class="st">业务板块</h2></div>
+      <div><p class="kicker">03 · BUSINESS</p><h2 class="st" data-i18n="biz.title">业务板块</h2></div>
       <span class="sec-no" aria-hidden="true">03</span>
     </div>
     <div class="biz-card fr rv">
@@ -476,11 +496,11 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
       <span class="shine" aria-hidden="true"></span>
       <div class="biz-media">
         <span class="med-tag">SPORTS &amp; FITNESS</span>
-        <img src="pingpong.jpg" alt="战神飞拍乒乓球辅助系统">
+        <img src="pingpong.jpg" alt="War God FlyPaddle table tennis assist system" data-i18n-alt="alt.pingpong">
       </div>
       <div class="biz-body">
-        <h3>战神飞拍 — 乒乓球辅助系统</h3>
-        <p>战神飞拍乒乓球辅助系统，面向乒乓球爱好者，辅助练习击球动作，帮助使用者纠正打球姿势，提升日常训练效果，是集团文体装备板块的重点产品。</p>
+        <h3 data-i18n="biz.name">战神飞拍 — 乒乓球辅助系统</h3>
+        <p data-i18n="biz.desc">战神飞拍乒乓球辅助系统，面向乒乓球爱好者，辅助练习击球动作，帮助使用者纠正打球姿势，提升日常训练效果，是集团文体装备板块的重点产品。</p>
       </div>
     </div>
   </div>
@@ -489,7 +509,7 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <section class="sec" id="racing">
   <div class="sec-inner">
     <div class="sec-head rv">
-      <div><p class="kicker">04 · GAMES &amp; MORE</p><h2 class="st">赛车游戏</h2></div>
+      <div><p class="kicker">04 · GAMES &amp; MORE</p><h2 class="st" data-i18n="racing.title">赛车游戏</h2></div>
       <span class="sec-no" aria-hidden="true">04</span>
     </div>
     <div class="duo">
@@ -498,13 +518,13 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
         <span class="shine" aria-hidden="true"></span>
         <div class="media">
           <span class="med-tag">RACING GAME</span>
-          <img src="racing.jpg" alt="赛车游戏">
+          <img src="racing.jpg" alt="Racing game" data-i18n-alt="alt.racing">
         </div>
         <div class="body">
-          <h3>赛车游戏</h3>
+          <h3 data-i18n="racing.card1.t">赛车游戏</h3>
           <p class="en">RACING GAME</p>
-          <p>大风大浪集团赛车游戏项目，点击按钮前往游玩页面。</p>
-          <a class="act" href="https://8ya69l.gicp.fun/" target="_blank" rel="noopener">打开赛车游戏<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p data-i18n="racing.card1.d">大风大浪集团赛车游戏项目，点击按钮前往游玩页面。</p>
+          <a class="act" href="https://8ya69l.gicp.fun/" target="_blank" rel="noopener"><span data-i18n="racing.card1.btn">打开赛车游戏</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="bcard fr rv" data-d="1">
@@ -512,10 +532,10 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
         <span class="shine" aria-hidden="true"></span>
         <div class="body">
           <div class="novel-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/><path d="M8 7h8M8 11h5"/></svg></div>
-          <h3>小说查看</h3>
+          <h3 data-i18n="racing.card2.t">小说查看</h3>
           <p class="en">NOVEL READING</p>
-          <p>点击下方按钮前往小说阅读页面。</p>
-          <a class="act" href="https://rqxcu0.gicp.fun/" target="_blank" rel="noopener">进入小说网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p data-i18n="racing.card2.d">点击下方按钮前往小说阅读页面。</p>
+          <a class="act" href="https://rqxcu0.gicp.fun/" target="_blank" rel="noopener"><span data-i18n="racing.card2.btn">进入小说网站</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
     </div>
@@ -525,21 +545,21 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
 <section class="sec" id="contact">
   <div class="sec-inner">
     <div class="sec-head rv">
-      <div><p class="kicker">05 · CONTACT</p><h2 class="st">联系我们</h2></div>
+      <div><p class="kicker">05 · CONTACT</p><h2 class="st" data-i18n="contact.title">联系我们</h2></div>
       <span class="sec-no" aria-hidden="true">05</span>
     </div>
     <div class="contact-grid">
       <div class="ctile fr rv">
         <i class="cr1"></i><i class="cr2"></i>
         <div class="c-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.8 3h2.4a1 1 0 0 1 1 .8l.7 3.4a1 1 0 0 1-.4 1l-1.7 1.3a12 12 0 0 0 5.7 5.7l1.3-1.7a1 1 0 0 1 1-.4l3.4.7a1 1 0 0 1 .8 1V19a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.8 5.2 2 2 0 0 1 6.8 3z"/></svg></div>
-        <div><p class="c-label">联系电话</p><p class="c-val zh">150xxxx4684</p></div>
-        <button class="cpy" data-copy="150xxxx4684" aria-label="复制联系电话"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>
+        <div><p class="c-label" data-i18n="contact.phone">联系电话</p><p class="c-val zh">150xxxx4684</p></div>
+        <button class="cpy" data-copy="150xxxx4684" aria-label="Copy phone number" data-i18n-aria="contact.phone.copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>
       </div>
       <div class="ctile fr rv" data-d="1">
         <i class="cr1"></i><i class="cr2"></i>
         <div class="c-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></div>
-        <div><p class="c-label">企业邮箱</p><p class="c-val zh">363***982@qq.com</p></div>
-        <button class="cpy" data-copy="363***982@qq.com" aria-label="复制企业邮箱"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>
+        <div><p class="c-label" data-i18n="contact.email">企业邮箱</p><p class="c-val zh">363***982@qq.com</p></div>
+        <button class="cpy" data-copy="363***982@qq.com" aria-label="Copy email" data-i18n-aria="contact.email.copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>
       </div>
     </div>
   </div>
@@ -560,24 +580,23 @@ footer .wavebox{top:0;transform:translateY(-50%);z-index:1}
         <path d="M10 30c5-8 9-8 14 0s9 8 14 0" stroke="url(#lg-mark)" stroke-width="2.6" stroke-linecap="round"/>
         <path d="M10 20c5-8 9-8 14 0s9 8 14 0" stroke="url(#lg-mark)" stroke-width="2.6" stroke-linecap="round" opacity=".5"/>
       </svg>
-      <div><b>大风大浪集团</b><small>DAFENG DALANG GROUP</small></div>
+      <div><b data-i18n="logo.brand">大风大浪集团</b><small>DAFENG DALANG GROUP</small></div>
     </div>
     <div class="foot-links">
-      <a href="#home">首页</a>
-      <a href="#ceo">CEO介绍</a>
-      <a href="#business">业务板块</a>
-      <a href="#racing">赛车游戏</a>
-      <a href="#contact">联系我们</a>
-      <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener">乐子AI</a>
-      <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener">意见反馈</a>
+      <a href="#home" data-i18n="nav.home">首页</a>
+      <a href="#ceo" data-i18n="nav.ceo">CEO介绍</a>
+      <a href="#business" data-i18n="nav.business">业务板块</a>
+      <a href="#racing" data-i18n="nav.racing">赛车游戏</a>
+      <a href="#contact" data-i18n="nav.contact">联系我们</a>
+      <a href="https://dafdal.github.io/lezi/" target="_blank" rel="noopener" data-i18n="nav.lezi">乐子AI</a>
+      <a href="https://x59d9y.gicp.fun/" target="_blank" rel="noopener" data-i18n="nav.feedback">意见反馈</a>
     </div>
   </div>
   <div class="foot-bar">
-    <p>大风大浪集团 © 2026 版权所有</p>
-    <p class="disc">本网站为完全虚构演示网站，内容仅供网页技术演示学习使用，如有雷同纯属巧合</p>
+    <p data-i18n="foot.copyright">大风大浪集团 © 2026 版权所有</p>
   </div>
 </footer>
-<button id="backTop" aria-label="回到顶部">
+<button id="backTop" aria-label="Back to top">
   <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
     <circle cx="20" cy="20" r="17" stroke="rgba(142,163,201,.25)" stroke-width="2.5"/>
     <circle id="ring" cx="20" cy="20" r="17" stroke="url(#lg-mark)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="106.8" stroke-dashoffset="106.8"/>
@@ -592,6 +611,110 @@ var $=function(s){return document.querySelector(s)};
 var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
 var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var fine=matchMedia("(pointer: fine)").matches;
+/* ===== 国际化 ===== */
+var I18N={
+  "doc.title":{en:"Dafeng Dalang Group - Official Website",zh:"大风大浪集团 - 官方网站"},
+  "logo.brand":{en:"Dafeng Dalang",zh:"大风大浪集团"},
+  "nav.home":{en:"Home",zh:"首页"},
+  "nav.ceo":{en:"CEO",zh:"CEO介绍"},
+  "nav.business":{en:"Business",zh:"业务板块"},
+  "nav.racing":{en:"Racing",zh:"赛车游戏"},
+  "nav.contact":{en:"Contact",zh:"联系我们"},
+  "nav.novel":{en:"Novel",zh:"小说查看"},
+  "nav.games":{en:"Games",zh:"跳转游戏"},
+  "nav.jelly":{en:"Jelly",zh:"解压果冻"},
+  "nav.lezi":{en:"Lezi AI",zh:"乐子AI"},
+  "nav.feedback":{en:"Feedback",zh:"意见反馈"},
+  "nav.login":{en:"Login",zh:"登录"},
+  "nav.register":{en:"Register",zh:"注册"},
+  "nav.loginReg":{en:"Login / Register",zh:"登录 / 注册"},
+  "disc.title":{en:"Disclaimer",zh:"免责声明"},
+  "disc.text":{en:"This website is a purely fictional demonstration. Dafeng Dalang Group, the people, company information and contact details shown here are fictional creations and do not correspond to any real entity. All content is for web technology demonstration and learning purposes only and does not constitute any commercial reference. Any resemblance is purely coincidental.",zh:"本网站为完全虚构演示网站，大风大浪集团、相关人物、企业信息、联系方式均为虚构创作，不对应任何现实实体。网站所有内容仅供网页技术演示学习使用，不构成任何商业参考。若有雷同纯属巧合。"},
+  "hero.kick":{en:"EST. 2026 · DIVERSIFIED GROUP",zh:"EST. 2026 · 综合企业集团"},
+  "hero.title":{en:"DAFENG DALANG GROUP",zh:"大风大浪集团"},
+  "hero.slogan":{en:"Diversified Industries, Innovation-Driven Growth",zh:"多元产业，创新驱动前行"},
+  "chip.rd":{en:"TECH R&amp;D",zh:"科技研发"},
+  "chip.sd":{en:"SMART DEVICES",zh:"智能设备"},
+  "chip.se":{en:"SPORTS EQUIPMENT",zh:"文体装备"},
+  "m.1":{en:"Diversified Industries",zh:"多元产业"},
+  "m.2":{en:"Innovation First",zh:"创新为本"},
+  "m.3":{en:"Smart Devices",zh:"智能设备"},
+  "m.4":{en:"Sports Equipment",zh:"文体装备"},
+  "m.5":{en:"War God FlyPaddle",zh:"战神飞拍"},
+  "m.6":{en:"Table Tennis Assist System",zh:"乒乓球辅助系统"},
+  "m.7":{en:"Racing Game",zh:"赛车游戏"},
+  "m.8":{en:"Great Value",zh:"高性价比"},
+  "about.title":{en:"About Us",zh:"集团简介"},
+  "about.p1":{en:"Dafeng Dalang Group is a <strong>diversified conglomerate</strong> covering technology R&amp;D, smart devices, sports &amp; fitness equipment and more. Driven by innovation and focused on real user experience, the Group develops practical, high-value products for everyday users. With a well-structured talent pipeline and a team of core managers and R&amp;D specialists, the Group keeps expanding into new tracks and strengthening its capabilities.",zh:"大风大浪集团是一家<strong>多元化综合企业集团</strong>，业务覆盖<strong>科技研发、智能设备、文体装备</strong>等多个领域。集团坚持创新为本，注重产品实际体验，面向广大普通用户打造实用、高性价比的各类产品。集团内部人才梯队完善，拥有多名核心管理人员与技术研发人员，不断拓展新赛道，持续提升自身实力。"},
+  "about.li1":{en:"Diversified portfolio: tech R&amp;D, smart devices, sports equipment",zh:"多元布局：科技研发 + 智能设备 + 文体装备"},
+  "about.li2":{en:"Built for everyday users, focused on real experience",zh:"面向广大普通用户，注重实际体验"},
+  "about.li3":{en:"A strong talent pipeline, always exploring new tracks",zh:"人才梯队完善，持续拓展新赛道"},
+  "feat1.t":{en:"Innovation First",zh:"创新为本"},
+  "feat1.d":{en:"Innovation-driven, we keep pushing breakthroughs in tech R&amp;D and smart devices.",zh:"坚持创新驱动，在科技研发与智能设备赛道持续深耕突破。"},
+  "feat2.t":{en:"Experience Matters",zh:"注重体验"},
+  "feat2.d":{en:"Real product experience comes first — every technology lands in what users actually feel.",zh:"以实际产品体验为先，让每一项技术都落到用户的真实感受上。"},
+  "feat3.t":{en:"Great Value",zh:"高性价比"},
+  "feat3.d":{en:"Built for the mass market with practical, high-value quality products.",zh:"面向大众市场，打造实用、高性价比的各类优质产品。"},
+  "ceo.title":{en:"Our CEO",zh:"CEO介绍"},
+  "ceo.role":{en:"Chairman &amp; CEO of Dafeng Dalang Group",zh:"大风大浪集团董事长兼CEO"},
+  "ceo.bio1":{en:"Leads the Group's overall strategy, steering the direction of every business segment and driving new projects from planning to launch. Focused on technical innovation and talent development, he leads the team to keep exploring in smart hardware and sports equipment, sets the Group's roadmap, and controls product quality and pace of growth.",zh:"主导集团整体战略规划，统筹各个业务板块的发展方向，推动新项目立项落地。注重技术创新与人才培养，带领团队在智能硬件、文体设备领域持续探索，制定集团发展路线，把控产品质量与发展节奏。"},
+  "ceo.bio2":{en:"Core management <strong>Lian Jinshan and Lei Guowei</strong> take part in major project decisions, working together to move every business forward steadily.",zh:"集团核心管理人员<strong>廉晋善、雷国蔚</strong>参与重大项目决策，协同推进各项业务稳步向前。"},
+  "ceo.tag1":{en:"Strategy",zh:"战略规划"},
+  "ceo.tag2":{en:"Innovation",zh:"技术创新"},
+  "ceo.tag3":{en:"Talent",zh:"人才培养"},
+  "biz.title":{en:"Business",zh:"业务板块"},
+  "biz.name":{en:"War God FlyPaddle – Table Tennis Assist System",zh:"战神飞拍 — 乒乓球辅助系统"},
+  "biz.desc":{en:"The War God FlyPaddle table tennis assist system is built for table tennis fans. It helps players practice stroke movements, correct their posture, and improve everyday training results — a flagship product in the Group's sports &amp; fitness equipment division.",zh:"战神飞拍乒乓球辅助系统，面向乒乓球爱好者，辅助练习击球动作，帮助使用者纠正打球姿势，提升日常训练效果，是集团文体装备板块的重点产品。"},
+  "alt.hero":{en:"Ocean of Waves",zh:"风浪之海"},
+  "alt.pingpong":{en:"War God FlyPaddle table tennis assist system",zh:"战神飞拍乒乓球辅助系统"},
+  "alt.racing":{en:"Racing game",zh:"赛车游戏"},
+  "racing.title":{en:"Racing Game",zh:"赛车游戏"},
+  "racing.card1.t":{en:"Racing Game",zh:"赛车游戏"},
+  "racing.card1.d":{en:"The Group's racing game project. Click the button to play.",zh:"大风大浪集团赛车游戏项目，点击按钮前往游玩页面。"},
+  "racing.card1.btn":{en:"PLAY RACING GAME",zh:"打开赛车游戏"},
+  "racing.card2.t":{en:"Novel Reading",zh:"小说查看"},
+  "racing.card2.d":{en:"Click the button below to visit the novel reading page.",zh:"点击下方按钮前往小说阅读页面。"},
+  "racing.card2.btn":{en:"OPEN NOVEL SITE",zh:"进入小说网站"},
+  "contact.title":{en:"Contact Us",zh:"联系我们"},
+  "contact.phone":{en:"Phone",zh:"联系电话"},
+  "contact.email":{en:"Email",zh:"企业邮箱"},
+  "contact.phone.copy":{en:"Copy phone number",zh:"复制联系电话"},
+  "contact.email.copy":{en:"Copy email",zh:"复制企业邮箱"},
+  "foot.copyright":{en:"Dafeng Dalang Group © 2026 All Rights Reserved",zh:"大风大浪集团 © 2026 版权所有"},
+  "aria.langSwitch":{en:"Switch language",zh:"切换语言"},
+  "toast.copied":{en:"Copied: ",zh:"已复制："},
+  "toast.copyfail":{en:"Copy failed. Please copy manually.",zh:"复制失败，请手动复制"},
+  "toast.nocopy":{en:"Auto-copy not supported in this environment.",zh:"当前环境不支持自动复制"}
+};
+var LANG_KEY="dafdallang.lang.v2";
+var lang="zh";
+try{var saved=localStorage.getItem(LANG_KEY);if(saved==="zh"||saved==="en")lang=saved;}catch(e){}
+var langBtn=$("#langSwitch");
+function applyLang(l){
+  lang=l;
+  document.documentElement.lang = l==="zh"?"zh-CN":"en";
+  document.body.classList.toggle("lang-zh",l==="zh");
+  document.body.classList.toggle("lang-en",l==="en");
+  var d=I18N;
+  $$("[data-i18n]").forEach(function(el){
+    var v=d[el.getAttribute("data-i18n")];
+    if(v&&v[l]!=null)el.innerHTML=v[l];
+  });
+  $$("[data-i18n-alt]").forEach(function(el){
+    var v=d[el.getAttribute("data-i18n-alt")];
+    if(v&&v[l])el.setAttribute("alt",v[l]);
+  });
+  $$("[data-i18n-aria]").forEach(function(el){
+    var v=d[el.getAttribute("data-i18n-aria")];
+    if(v&&v[l])el.setAttribute("aria-label",v[l]);
+  });
+  document.title=d["doc.title"][l];
+  langBtn.setAttribute("aria-label",d["aria.langSwitch"][l]);
+  try{localStorage.setItem(LANG_KEY,lang);}catch(e){}
+}
+applyLang(lang);
+langBtn.addEventListener("click",function(){applyLang(lang==="zh"?"en":"zh")});
+langBtn.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();applyLang(lang==="zh"?"en":"zh")}});
 /* ===== 粒子场 ===== */
 (function(){
   if(reduce)return;
@@ -674,9 +797,10 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")closePop()})
 $$("[data-copy]").forEach(function(b){
   b.addEventListener("click",function(){
     var v=b.getAttribute("data-copy");
+    var pre=I18N["toast.copied"][lang];
     if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(v).then(function(){toast("已复制："+v)}).catch(function(){toast("复制失败，请手动复制")});
-    }else{toast("当前环境不支持自动复制")}
+      navigator.clipboard.writeText(v).then(function(){toast(pre+v)}).catch(function(){toast(I18N["toast.copyfail"][lang])});
+    }else{toast(I18N["toast.nocopy"][lang])}
   });
 });
 /* ===== 移动端菜单 ===== */
